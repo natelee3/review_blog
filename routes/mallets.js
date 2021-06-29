@@ -14,7 +14,8 @@ router.get('/:id?', async (req, res) => {
             locals: {
                 title: 'Mallet Details',
                 theMallet,
-                theReview
+                theReview,
+                is_logged_in: req.session.is_logged_in
             },
             partials: {
                 body: 'partial-mallet-details',
@@ -27,7 +28,8 @@ router.get('/:id?', async (req, res) => {
         res.render('template', {
             locals: {
                 title: 'Our Favorite Mallets',
-                malletsData
+                malletsData,
+                is_logged_in: req.session.is_logged_in
             },
             partials: {
                 body: 'partial-mallets',

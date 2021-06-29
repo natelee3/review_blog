@@ -6,7 +6,8 @@ CREATE TABLE brands (
 CREATE TABLE users (
     id serial PRIMARY KEY,
     name text,
-    username varchar
+    email varchar(200),
+    password varchar(2000)
 );
 
 CREATE TABLE mallets (

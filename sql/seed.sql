@@ -8,11 +8,11 @@ VALUES
     ('Vic Firth');
 
 INSERT INTO users
-    (name, username)
+    (name, email, password)
 VALUES
-    ('Nate Lee', 'natelee3'),
-    ('John Benton', 'JT_IV'),
-    ('Sean Reid', '#1animefan');
+    ('Nate Lee', 'nlee@mail.com', ''),
+    ('John Benton', 'JT_IV@mail.com', ''),
+    ('Sean Reid', '#1animefan@mail.com', '');
 
 INSERT INTO mallets
     (brand_id, model_number, name, shaft, msrp, img)
@@ -20,7 +20,7 @@ VALUES
     (1, 'IP3105B', 'Ludwig Albert-Medium', 'birch', 41.25, '../img/IP3105B.jpeg'),
     (3, 'KB14', 'Kevin Bobo-Hard', 'birch', 40.49, '../img/KB14.jpeg'),
     (2, 'K6', '1 1/8 Classic Poly', 'rattan', 45.00, '../img/K6.jpeg'),
-    (4, '22R', 'Pro Vibe-Medium', 'rattan', 39.99, '../img/22R.');
+    (4, '22R', 'Pro Vibe-Medium', 'rattan', 39.99, '../img/22R.jpeg');
 
 INSERT INTO reviews 
     (review_text, user_id, mallet_id)

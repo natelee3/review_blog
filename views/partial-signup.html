@@ -1,0 +1,30 @@
+<main>
+    <div class="mb-3">
+        <h1 class="text-center">${title}</h1>
+    </div>    
+    <form action="/users/signup" method="post">
+        <fieldset class="text-center">
+            <div class='form-group'>
+                <div class='mb-3'>
+                <label class="form-label"> Name
+                    <input type="text" name="user_name" placeholder="Enter your name" required/>
+                </label>
+            </div>  
+            <div class='mb-3'>
+                <label class="form-label"> Email
+                    <input type="email" name="user_email" placeholder="Enter your email" required/>
+                </label>
+            </div>
+            <div class="mb-3">
+                <label class="form-label"> Password
+                    <input type="password" name="user_password" placeholder="Enter your password" required/>
+                </label>
+            </div>
+            
+            <div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+            </div>
+        </fieldset>
+    </form>
+</main>
