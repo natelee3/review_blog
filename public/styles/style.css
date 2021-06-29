@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+}
+
+.product-details {
+    border: solid 1px #dedad3;
+    height: auto;
+    overflow: visible;
+    padding: 30px 20px
+}
+
+.product-review {
+    border-bottom: solid 1px #e5e5e5;
+    margin: 0;
+    padding: 10px 0 20px 0;
+}
+
+.card-body {
+    position: absolute;
+    bottom: 10px;
+}
+
+h1 {
+    padding-top: 10px;
+}

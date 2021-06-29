@@ -1,0 +1,20 @@
+<main>
+    <h1 class="text-center">${theMallet[0].brand_name} ${theMallet[0].name}</h1>
+    ${theReview.map(review => `
+        <div class='product-details mb-4'>
+            <div class="product-review">
+                <div>
+                    <h4>Comments: </h4>
+                    <p>${review.review_text}</p>
+                </div>
+                <div>
+                    <h4>Posted by: </h4>
+                    <p>${review.name}</p>
+                </div>
+            </div>
+        </div>`
+        ).join('')}
+        <div class="text-center">
+            <a href='./'>Back to All Mallets</a>
+        </div>
+</main>

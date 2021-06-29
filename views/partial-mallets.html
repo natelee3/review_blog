@@ -1,0 +1,23 @@
+<main>
+    <h1 class="text-center">${title}</h1>
+
+    <div class="container mt-4">
+        <div class="row d-flex justify-content-center">
+    ${malletsData.map(mallet => `
+        <div class="col-auto mb-3">
+        <div class="card" style="width: 18rem; height: 500px;">
+            <img src=${mallet.img} class="card-img-top p-2" alt="...">
+            <div class="card-body text-center">
+              <h5 class="card-title text-center">${mallet.brand_name} ${mallet.name}</h5>
+              <p class="card-text">Shaft material: ${mallet.shaft}</p>
+              <p class="card-text">MSRP: $${mallet.msrp}</p>
+              <div class='text-center'>
+                 <a href="/mallets/${mallet.id}" class="btn btn-primary">See Reviews</a>
+              </div>
+            </div>
+          </div>
+          </div>`
+    ).join('')}
+</div>
+</div>
+</main>
