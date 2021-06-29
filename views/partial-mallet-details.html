@@ -14,6 +14,21 @@
             </div>
         </div>`
         ).join('')}
+        ${!!is_logged_in ? 
+        
+        `<div class="text-center">
+        <form action="/reviews/add" method="POST">
+            <p>Add a new review:</p>
+            <input type="hidden" value='${theMallet[0].id}' name="mallet_id"/>
+            <div class="">
+                <div class="">
+                    <textarea class="textarea is-primary" placeholder="Leave a review" rows="4" cols="50" name="review_content" required></textarea>
+                </div>
+            </div>
+            <button class="button is-primary" type="submit">Submit Review</button>
+        </form>
+    </div>` : ``
+    }
         <div class="text-center">
             <a href='./'>Back to All Mallets</a>
         </div>

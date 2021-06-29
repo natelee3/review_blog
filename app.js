@@ -35,7 +35,9 @@ server.listen(port, hostname, () => {
 const rootController = require('./routes/index');
 const malletController = require('./routes/mallets');
 const usersController = require('./routes/users');
+const reviewController = require('./routes/reviews');
 
 app.use('/', rootController);
 app.use('/mallets', malletController);
 app.use('/users', usersController);
+app.use('/reviews', reviewController);

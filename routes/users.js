@@ -35,7 +35,7 @@ router.get('/login', (req, res) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('/')
+    res.redirect('back')
 });
 
 router.post('/signup', async (req, res) => {
