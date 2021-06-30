@@ -14,7 +14,7 @@ class MalletsModel {
     static async getAllMalletData() {
         try {
             const response = await db.any(
-                `SELECT mallets.id, model_number, name, shaft, brand_name, img, msrp  FROM mallets
+                `SELECT mallets.id, model_number, name, shaft, brand_name, img, msrp, "for"  FROM mallets
                 INNER JOIN brands
                 ON mallets.brand_id = brands.id`
             )
@@ -27,7 +27,7 @@ class MalletsModel {
     static async getMalletById(id) {
         try {
             const response = await db.any(
-                `SELECT mallets.id, model_number, name, shaft, brand_name, img, msrp  FROM mallets
+                `SELECT mallets.id, model_number, name, shaft, brand_name, img, msrp, "for"  FROM mallets
                 INNER JOIN brands
                 ON mallets.brand_id = brands.id
                 WHERE mallets.id = ${id};`

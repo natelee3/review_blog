@@ -4,7 +4,6 @@ const express = require('express');
 const router = express.Router();
 const MalletsModel = require('../models/MalletsModel');
 
-
 router.get('/:id?', async (req, res) => {
     if (!!req.params.id) {
         const malletId = req.params.id;
@@ -39,5 +38,6 @@ router.get('/:id?', async (req, res) => {
         })
     }
 })
+
 
 module.exports = router;

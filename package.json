@@ -16,6 +16,7 @@
     "express": "^4.17.1",
     "express-es6-template-engine": "^2.2.3",
     "express-session": "^1.17.2",
-    "pg-promise": "^10.10.2"
+    "pg-promise": "^10.10.2",
+    "rater-js": "^1.0.1"
   }
 }
