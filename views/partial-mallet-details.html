@@ -5,9 +5,13 @@
     ${theReview.map(review => `
         <div class='product-details mb-4'>
             <div class="product-review">
-                <div id="rater">
-
-                </div>
+                <ul class="rating">
+                    <li class="rating-item" data-rate="1"></li>
+                    <li class="rating-item active" data-rate="2"></li>
+                    <li class="rating-item" data-rate="3"></li>
+                    <li class="rating-item" data-rate="4"></li>
+                    <li class="rating-item" data-rate="5"></li>
+                    </ul>
                 <div>
                     <h4>Comments: </h4>
                     <p>${review.review_text}</p>
@@ -25,9 +29,7 @@
         <form action="/reviews/add" method="POST">
             <p>Add a new review:</p>
             <input type="hidden" value='${theMallet[0].id}' name="mallet_id"/>
-            <div id="rater" class="star-rating" style="width: 160px; height: 32px; background-size: 32px;" title="5/5">
-                <div class="star-value" style="background-size: 32px; width: 0%;"></div>            
-            </div>
+        
             <div class="">
                 <div class="">
                     <textarea class="textarea is-primary" placeholder="Leave a review" rows="4" cols="50" name="review_content" required></textarea>
@@ -42,25 +44,19 @@
         </div>
 </main>
 <script>
-    var rater = require("rater-js");
-
-    var myRater = rater({element: document.querySelector("#rater"), rateCallback: function rateCallback(rating, done) {
-                 //make async call to server however you want
-                 //in this example we have a 'service' that rate and returns the average rating
-                 myDataService.rate(rate).then(function(avgRating) {
-                     //update the avarage rating with the one we get from the server
-                     myRater.setRating(avgRating);
-                      //we could disable the rater to prevent another rating
-                      //if we dont want the user to be able to change their mind
-                     myRater.disable();
-                     //dont forget to call done
-                     done();
-                 }, function(error) {
-                         //handle the error
-                         //dont forget to call done
-                         done();
-                 });
-     }});
+    const container = document.querySelector('.rating');
+const items = container.querySelectorAll('.rating-item')
+container.onclick = e => {
+const elClass = e.target.classList;
+// change the rating if the user clicks on a different star
+if (!elClass.contains('active')) {
+items.forEach( // reset the active class on the star
+item => item.classList.remove('active')
+);
+console.log(e.target.getAttribute("data-rate"));
+elClass.add('active'); // add active class to the clicked star
+}
+};
 
 
  </script>

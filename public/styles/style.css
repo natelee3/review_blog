@@ -24,11 +24,39 @@ h1 {
     padding-top: 10px;
 }
 
-.star-rating {
-    background: url("myStar_off.svg") !important;
+.rating {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+    
+.rating li {
+    list-style-type: none
 }
 
-/* //add style for 'on' mode */
-.star-rating .star-value{
-    background: url("myStar_on.svg") !important;
+.rating-item {
+    border: 1px solid #fff;
+    cursor: pointer;
+    font-size:2em;
+    color: black;
+}
+
+/* initial: make all stars full */
+.rating-item::before {
+    content: "\2605";
+}
+
+/* make until the clicked star (the rest) empty */
+.rating-item.active ~ .rating-item::before {
+    content: "\2606";
+}
+
+/* on hover make all full */
+.rating:hover .rating-item::before {
+    content: "\2605";
+}
+
+/* make until the hovered (the rest) empty */
+.rating-item:hover ~ .rating-item::before {
+    content: "\2606";
 }
